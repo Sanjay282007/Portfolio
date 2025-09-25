@@ -1,3 +1,4 @@
+/* Base Styling */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,8 +6,10 @@ body {
   color: #333;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
+/* Header Section */
 header {
   height: 100vh;
   display: flex;
@@ -16,6 +19,7 @@ header {
   text-align: center;
   background: linear-gradient(135deg, #e0f7fa, #f1fcfe, #ffffff);
   transition: all 0.8s ease;
+  padding: 0 20px;
 }
 
 header h1 {
@@ -41,7 +45,7 @@ header p {
 }
 
 .roles {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
@@ -53,25 +57,29 @@ header p {
 
 .header-buttons a {
   margin: 5px;
-  padding: 10px 20px;
-  background-color: #2c3e50;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #007acc, #005f99);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 25px;
   display: inline-block;
   font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .header-buttons a:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #005f99, #004477);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
+/* Navigation */
 nav {
   position: sticky;
   top: 0;
-  background: linear-gradient(to right, #ffffff, #eef9ff);
-  padding: 12px 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -84,22 +92,24 @@ nav a {
   color: #007acc;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: 0.3s;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   background-color: #d4f1ff;
+  color: #004477;
 }
 
+/* Section Cards */
 section {
   padding: 60px 20px;
-  max-width: 900px;
+  max-width: 950px;
   margin: 40px auto;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease;
@@ -114,36 +124,41 @@ section.active {
 
 h2 {
   color: #2c3e50;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
+  font-size: 2rem;
 }
 
-ul, ol {
-  padding-left: 20px;
-}
-
+/* Project Cards */
 .project {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
+/* Certifications */
 .cert-buttons a, .cert-list a {
   background: #F1FCFE;
   color: #333;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 10px 14px;
+  border-radius: 6px;
   text-decoration: none;
   display: inline-block;
-  margin: 3px 0;
+  margin: 5px 5px 5px 0;
+  transition: all 0.3s ease;
+}
+
+.cert-buttons a:hover, .cert-list a:hover {
+  background: #007acc;
+  color: #fff;
 }
 
 .cert-note {
@@ -153,77 +168,111 @@ ul, ol {
   color: #2c3e50;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f2f2f2;
-}
-
-#btnTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 15px;
-  border: none;
-  background-color: #F1FCFE;
-  color: #333;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  cursor: pointer;
-  display: none;
-  transition: 0.3s;
-}
-
-#btnTop:hover {
-  background-color: #dff5fb;
-}
-
-.marquee {
-  background: #007acc;
-  color: white;
-  padding: 10px 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* Experience Section */
 .experience-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
   margin-top: 20px;
 }
 
 .experience-box {
-  background: #f9f9f9;        /* Light box background */
-  border: 2px solid #ddd;     /* Border */
-  border-radius: 10px;        /* Rounded corners */
-  padding: 20px;              /* Inner spacing */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Soft shadow */
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-box:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .experience-box h3 {
   margin-top: 0;
-  color: #222;
+  color: #007acc;
 }
 
 .experience-box p {
   color: #666;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .experience-box ul {
   margin: 10px 0 0 20px;
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+}
 
+/* Back to Top */
+#btnTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 12px 15px;
+  border: none;
+  background-color: #007acc;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+#btnTop:hover {
+  background-color: #005f99;
+  transform: scale(1.1);
+}
+
+/* Marquee (Custom Animation) */
+.marquee {
+  background: #007acc;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.marquee p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Scroll Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  nav { gap: 10px; }
+  section { margin: 20px; padding: 40px 15px; }
+  .experience-container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 0.9rem; }
+  .header-buttons a { padding: 10px 18px; font-size: 0.9rem; }
+  nav a { padding: 6px 10px; font-size: 0.85rem; }
+  h2 { font-size: 1.6rem; }
+}
